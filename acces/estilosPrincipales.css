@@ -24,15 +24,24 @@ h1, h2 {
         font-size: 20px;
     }
     .botones {
-        width: 150px;
+        width: 90%;
+        max-width: 250px;
+        margin: 15px auto;
+    }
+    
+    .config {
+        top: 10px;
+        right: 10px;
     }
 }
 
-
-
-
-
-
+.config {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    padding: 10px;
+}
 
 /*estilos para el boton 1*/
 .botones {
