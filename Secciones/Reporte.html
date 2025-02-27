@@ -1,11 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte</title>
+    <title>Reporte Inventario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="Reporte.css">
 </head>
 <body>
-    
+    <div class="container">
+        <!-- Header with home icon -->
+        <div class="home-section">
+            <a href="../index.html" class="home-icon"><i class="fas fa-home"></i></a>
+        </div>
+
+        <!-- Title section -->
+        <div class="title-section">
+            <h1>Reporte Inventario</h1>
+        </div>
+
+        <!-- Search section -->
+        <div class="form-group search-group">
+            <input type="text" id="searchBar" placeholder="Ingrese código de barra">
+            <div class="input-icons">
+                <i class="fas fa-barcode"></i>
+                <button id="btnSearch" class="btn-buscar">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Rest of the content remains the same -->
+        <div id="loadingState" class="loading-state hidden">
+            <i class="fas fa-spinner fa-spin"></i>
+            <span>Cargando productos...</span>
+        </div>
+
+        <div id="errorMessage" class="error-message hidden">
+            <i class="fas fa-exclamation-circle"></i>
+            <span>Error al cargar los productos</span>
+        </div>
+
+        <div id="productsList" class="products-list">
+            <!-- Products will be loaded dynamically -->
+        </div>
+
+        <template id="productTemplate">
+            <div class="product-card">
+                <div class="product-info">
+                    <h3 class="product-name"></h3>
+                    <div class="product-details">
+                        <p>Cod Barra: <span class="barcode"></span></p>
+                        <p>Cod Int: <span class="internal-code"></span></p>
+                        <p class="patent"></p>
+                        <p class="stock">Stock: <span></span></p>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+
+    <script src="Reporte.js"></script>
 </body>
 </html>
