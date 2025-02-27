@@ -64,30 +64,64 @@ body {
     font-size: 16px;
 }
 
-.search-group {
-    position: relative;
+.filters-container {
     display: flex;
     align-items: center;
+    gap: 10px;
     padding: 15px;
     background-color: var(--card-background);
     border-bottom: 1px solid var(--border-color);
 }
 
-.search-group input {
+.search-group {
+    flex: 2;
+    padding: 0;
+    border: none;
+}
+
+.filter-group {
+    flex: 1;
+    padding: 0;
+    border: none;
+    min-width: 150px;
+}
+
+.select-wrapper {
+    position: relative;
     width: 100%;
-    padding: 12px 80px 12px 15px;
+}
+
+.select-wrapper select {
+    width: 100%;
+    padding: 12px 35px 12px 15px;
     border: 1px solid var(--border-color);
     border-radius: 4px;
     font-size: 15px;
-    outline: none;
+    appearance: none;
+    background-color: white;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: all 0.3s ease;
 }
 
-.input-icons {
+.select-wrapper .fa-filter {
     position: absolute;
-    right: 25px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    pointer-events: none;
+    font-size: 14px;
+}
+
+.select-wrapper select:hover {
+    border-color: var(--primary-color);
+}
+
+.select-wrapper select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
 }
 
 .btn-buscar {
@@ -197,5 +231,16 @@ h1 {
     
     h1 {
         font-size: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .filters-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .filter-group {
+        width: 100%;
     }
 }
