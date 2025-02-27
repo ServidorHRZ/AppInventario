@@ -1,11 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Toma de Inventario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="TomaInventario.css">
 </head>
 <body>
-    Tomar Inventario
-</body>
+    <div class="container">
+        <!-- Header with home icon -->
+        <div class="home-section">
+            <a href="../index.html" class="home-icon"><i class="fas fa-home"></i></a>
+        </div>
+
+        <!-- Title section -->
+        <div class="title-section">
+            <h1>Toma de Inventario</h1>
+        </div>
+
+        <!-- Search section -->
+        <div class="form-group search-group">
+            <input type="text" id="searchBar" placeholder="Patente">    
+            <div class="input-icons">
+                <button id="btnSearch" class="btn-buscar">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="form-group search-group">
+            <input type="text" id="barcodeBar" placeholder="Cod Barra">    
+            <div class="input-icons">
+                <i class="fas fa-barcode"></i>
+                <button id="btnBarcode" class="btn-buscar">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Inventory Form -->
+        <div class="inventory-form">
+            <div>
+                <label>Nombre</label>
+                <input type="text" readonly>
+            </div>
+            
+            <div>
+                <label>Cod Barra</label>
+                <input type="text" readonly>
+            </div>
+
+            <div>
+                <label>Cod Interno</label>
+                <input type="text" readonly>
+            </div>
+
+            <div>
+                <label>Inv Actual</label>
+                <input type="text">
+            </div>
+
+            <div>
+                <label>Stock</label>
+                <input type="text">
+            </div>
+
+            <div>
+                <label>Nuevo Stock</label>
+                <input type="text">
+            </div>
+
+            <button class="btn-guardar">Guardar</button>
+        </div>
+
+        
+
+
+        <template id="productTemplate">
+            <div class="product-card">
+                <div class="product-info">
+                    <h3 class="product-name"></h3>
+                    <div class="product-details">
+                        <p>Cod Barra: <span class="barcode"></span></p>
+                        <p>Cod Int: <span class="internal-code"></span></p>
+                        <p class="patent"></p>
+                        <p class="stock">Stock: <span></span></p>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+
+    </body>
 </html>
