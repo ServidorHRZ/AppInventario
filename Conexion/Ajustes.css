@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 30px;
+}
+
+.home-icon, .search-icon {
+    font-size: 20px;
+    color: #444444;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.home-icon:hover, .search-icon:hover {
+    background-color: #f0f0f0;
+}
+
+h1 {
+    font-size: 28px;
+    margin: 25px 0;
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 45px 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+.form-group input:disabled {
+    background-color: #f9f9f9;
+    color: #666;
+}
+
+.form-group i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 20px;
+    pointer-events: none;
+}
+
+.form-group label + input + i {
+    top: calc(50% + 10px);
+}
+
+.form-group input:disabled + i {
+    opacity: 0.5;
+}
+
+.btn-guardar {
+    background-color: #1f2a91d7;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    margin: 30px auto 10px;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 200px;
+}
+
+
+
+@media (max-width: 480px) {
+    .container {
+        margin: 0;
+        padding: 15px;
+    }
+
+    body {
+        background-color: #ffffff;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .form-group input {
+        padding: 10px 35px 10px 12px;
+    }
+
+    .btn-guardar {
+        padding: 10px 20px;
+    }
