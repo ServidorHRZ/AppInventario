@@ -16,10 +16,14 @@ const config ={
 async function obtenerDatos(){
     try {
         let pool = await sql.connect(config);
-        let productos = await pool.request().query('SELECT * FROM inventario');
-        return resultado.recordset;
+        const inventario = await pool.request().query('SELECT * FROM inventario');
+        const vista_mproducto_mcodbarra = await pool.request().query('SELECT * FROM vista_mproducto_mcodbarra');
+        return {
+            inventario: inventario.recordset,
+            vista_mproducto_mcodbarra: vista_mproducto_mcodbarra.recordset
+        }
     } catch (err) {
-        alert.error('Error al conectar al la BD', err);
+        console.error('Error al conectar al la BD', err);
     }
 }
 
